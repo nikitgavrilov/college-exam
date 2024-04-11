@@ -74,16 +74,17 @@ hr {
   background-color: #ccc;
   height: 1px;
 }
-/* Styles */
-
-.wrapper {
-  min-height: 100vh;
-  overflow: hidden;
+textarea {
+  resize: vertical;
 }
+button {
+  background-color: transparent;
+}
+/* Styles */
 [class*="container"] {
   margin: 0 auto;
   padding: 0 15px;
-  max-width: 1280;
+  max-width: 1280px;
 }
 
 /* titles */
@@ -107,7 +108,7 @@ hr {
 .form {
   padding: 15px;
   min-width: 250px;
-  min-height: 400px;
+  min-height: 200px;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -115,7 +116,8 @@ hr {
 .form > *:not(:last-child) {
   margin: 0 0 15px 0;
 }
-.input-field input {
+.input-field input,
+textarea {
   margin: 5px 0 0 0;
   padding: 0 0 0 5px;
   min-width: 250px;
@@ -123,6 +125,10 @@ hr {
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none;
+}
+.input-field input,
+textarea:focus {
+  border: 1px solid #7c7c7c;
 }
 .input-field p,
 .redirect {
@@ -150,3 +156,17 @@ hr {
   text-decoration: underline;
 }
 /* form */
+
+/* statements */
+.column {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 15px;
+  margin: 0 0 15px 0;
+  max-width: 500px;
+}
+.item > *:not(:last-child) {
+  margin: 0 0 10px 0;
+}
+/* statements */
