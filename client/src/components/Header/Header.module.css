@@ -14,12 +14,12 @@
   gap: 15px;
 }
 .list li,
-button {
+.exit {
   font-size: 16px;
   cursor: pointer;
 }
-.list li,
-button:hover {
+.list li:hover,
+.exit:hover {
   text-decoration: underline;
 }
 

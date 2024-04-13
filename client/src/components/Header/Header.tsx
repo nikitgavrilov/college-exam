@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ pageUrl }) => {
       </li>
       <li>
         <Link to={"/"}>
-          <button>Выйти</button>
+          <button className={styles.exit}>Выйти</button>
         </Link>
       </li>
     </>
@@ -39,12 +39,12 @@ const Header: React.FC<HeaderProps> = ({ pageUrl }) => {
         <Link to={"/statements"}>Вернуться обратно</Link>
       </li>
       <Link to={"/"}>
-        <button>Выйти</button>
+        <button className={styles.exit}>Выйти</button>
       </Link>
     </>
   ) : adminUrl ? (
     <Link to={"/"}>
-      <button>Выйти</button>
+      <button className={styles.exit}>Выйти</button>
     </Link>
   ) : (
     ""
