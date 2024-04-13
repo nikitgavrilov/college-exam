@@ -9,10 +9,13 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ pageUrl }) => {
   const statementsUrl = pageUrl === "/statements";
   const statementMakingUrl = pageUrl === "/statement-making";
+  const adminUrl = pageUrl === "/admin";
 
   const titleResult = statementsUrl ? (
     <h1 style={{ fontSize: 24, fontWeight: 700 }}>Заявления</h1>
   ) : statementMakingUrl ? (
+    <h1 style={{ fontSize: 24, fontWeight: 700 }}>Составить заявление</h1>
+  ) : adminUrl ? (
     <h1 style={{ fontSize: 24, fontWeight: 700 }}>Составить заявление</h1>
   ) : (
     ""
@@ -39,6 +42,10 @@ const Header: React.FC<HeaderProps> = ({ pageUrl }) => {
         <button>Выйти</button>
       </Link>
     </>
+  ) : adminUrl ? (
+    <Link to={"/"}>
+      <button>Выйти</button>
+    </Link>
   ) : (
     ""
   );

@@ -5,6 +5,7 @@ import ErrorPage from "./pages/ErrorPage";
 import AuthPage from "./pages/AuthPage";
 import StatementsPage from "./pages/StatementsPage";
 import StatementMakingPage from "./pages/StatementMakingPage";
+import AdminPage from "./pages/AdminPage";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/statement-making",
     element: <StatementMakingPage />,
+  },
+  {
+    path: "/admin",
+    element: <AdminPage />,
   },
 ]);
 

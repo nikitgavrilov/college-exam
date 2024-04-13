@@ -170,3 +170,26 @@ textarea:focus {
   margin: 0 0 10px 0;
 }
 /* statements */
+
+.resolve,
+.reject {
+  background-color: #10b981;
+  min-width: 150px;
+  height: 25px;
+  color: #fff;
+  border-radius: 4px;
+  transition: 0.3s all;
+}
+.resolve:hover,
+.reject:hover {
+  text-decoration: none;
+}
+.resolve:hover {
+  background-color: #34dca4;
+}
+.reject {
+  background-color: #e11d48;
+}
+.reject:hover {
+  background-color: #a7082b;
+}

@@ -8,7 +8,7 @@ const StatementMaking: React.FC = () => {
   return (
     <section>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <form onSubmit={handleSubmit} className={"column"} style={{ minWidth: 500 }}>
+        <form onSubmit={handleSubmit} className={"column"} style={{ width: "100%" }}>
           <div className={"item"}>
             <h2 className={"title"} style={{ marginBottom: 15 }}>
               Заявление
