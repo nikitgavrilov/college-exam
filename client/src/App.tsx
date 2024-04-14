@@ -1,11 +1,11 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RegPage from "./pages/RegPage";
 import ErrorPage from "./pages/ErrorPage";
 import AuthPage from "./pages/AuthPage";
 import StatementsPage from "./pages/StatementsPage";
 import StatementMakingPage from "./pages/StatementMakingPage";
 import AdminPage from "./pages/AdminPage";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {

@@ -1,33 +1,17 @@
 import React from "react";
-import { IStatement } from "../../modules/IStatement";
-
-const statementList: IStatement[] = [
-  {
-    id: "0",
-    number: "м967мм",
-    description: `Хочу уведомить вас о том, что данный автомобиль был замечен за 
-		превышение скорости на улице Гагарина вчера в 18:30. Согласно 
-		моим подсчетам, его скорость превысила разрешенный предельный 
-		уровень на 15 км/ч.`,
-    state: 1,
-  },
-  {
-    id: "1",
-    number: "а458еу",
-    description: `Хочу сообщить вам о том, что на прошлой неделе этот автомобиль
-		был замечен нарушающим ПДД. Он проехал через красный свет на
-		перекрестке Ленина и Пушкина.`,
-    state: 0,
-  },
-  {
-    id: "2",
-    number: "а128ем",
-    description: `Хочу сообщить вам о том, что этот автомобиль плохой!!!`,
-    state: 2,
-  },
-];
+import { useAppSelector } from "../../hooks/redux";
+import { useActions } from "../../hooks/useActions";
 
 const Admin: React.FC = () => {
+  const { statements } = useAppSelector((state) => state.statements);
+
+  const { getStatements } = useActions();
+
+  React.useEffect(() => {
+    getStatements();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
   };
@@ -35,12 +19,12 @@ const Admin: React.FC = () => {
   return (
     <section>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-        {statementList.map((item, index) => (
+        {statements.map((item, index) => (
           <div key={item.id} className={"column"}>
             <form onSubmit={handleSubmit} className={"item"}>
               <h2 className={"title"}>Заявление №{index + 1}</h2>
               <h3>
-                Номер автомобиля - <span style={{ fontWeight: 700, textTransform: "uppercase" }}>{item.number}</span>
+                Номер автомобиля - <span style={{ fontWeight: 700, textTransform: "uppercase" }}>{item.car_number}</span>
               </h3>
               <p style={{ lineHeight: 1.4 }}>{item.description}</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 15 }}>
