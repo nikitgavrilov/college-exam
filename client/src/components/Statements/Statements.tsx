@@ -34,10 +34,10 @@ const Statements: React.FC = () => {
                     borderRadius: 4,
                     color: "white",
                     fontWeight: 700,
-                    backgroundColor: item.state === 0 ? "#E11D48" : item.state === 1 ? "#10B981" : "#6366F1",
+                    backgroundColor: item.status === 0 ? "#E11D48" : item.status === 1 ? "#10B981" : "#6366F1",
                   }}
                 >
-                  {item.state === 0 ? "Отклонено" : item.state === 1 ? "Подтверждено" : "Рассматривается"}
+                  {item.status === 0 ? "Отклонено" : item.status === 1 ? "Подтверждено" : "Рассматривается"}
                 </p>
               </div>
             </div>

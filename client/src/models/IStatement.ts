@@ -1,6 +1,6 @@
 export interface IStatement {
   id: string;
-  number: string;
+  car_number: string;
   description: string;
-  state: 0 | 1 | 2;
+  status: 0 | 1 | 2;
 }

@@ -1,10 +1,10 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { statementsSlice } from "./slices/statements/statements.slice";
-import { statementMaking } from "./slices/statement-making/statement-making.slice";
+import { statementMakingSlice } from "./slices/statement-making/statement-making.slice";
 
 const rootReducer = combineReducers({
   statements: statementsSlice.reducer,
-  statementMaking: statementMaking.reducer,
+  statementMaking: statementMakingSlice.reducer,
 });
 
 export const store = configureStore({

@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ pageUrl }) => {
   ) : statementMakingUrl ? (
     <h1 style={{ fontSize: 24, fontWeight: 700 }}>Составить заявление</h1>
   ) : adminUrl ? (
-    <h1 style={{ fontSize: 24, fontWeight: 700 }}>Составить заявление</h1>
+    <h1 style={{ fontSize: 24, fontWeight: 700 }}>Панель администратора</h1>
   ) : (
     ""
   );

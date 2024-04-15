@@ -9,7 +9,7 @@ const initialState: StatementsState = {
   message: null,
 };
 
-export const statementMaking = createSlice({
+export const statementMakingSlice = createSlice({
   name: "statement-making",
   initialState,
   reducers: {},

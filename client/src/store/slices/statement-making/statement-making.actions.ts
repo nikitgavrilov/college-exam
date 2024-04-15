@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { IStatement } from "../../../modules/IStatement";
+import { IStatement } from "../../../models/IStatement";
 
 export const createStatement = createAsyncThunk(
   "statement/create",
-  async (statement: Omit<IStatement, "id" | "state">, { rejectWithValue }) => {
+  async (statement: Omit<IStatement, "id" | "status">, { rejectWithValue }) => {
     try {
       const response = await fetch("http://localhost:3001/api/v1/statements", {
         method: "POST",

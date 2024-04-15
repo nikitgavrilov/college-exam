@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { IStatement } from "../../../modules/IStatement";
+import { IStatement } from "../../../models/IStatement";
 
 export const getStatements = createAsyncThunk<IStatement[]>("statements/get-all", async (_, { rejectWithValue }) => {
   try {

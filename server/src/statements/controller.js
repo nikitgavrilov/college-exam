@@ -27,7 +27,18 @@ const addStatement = (req, res) => {
   });
 };
 
+const updateStatus = (req, res) => {
+  const id = parseInt(req.params.id);
+  const { status } = req.body;
+
+  conn.query(queries.updateStatus, [status, id], (error, results) => {
+    if (error) throw error;
+    res.status(200).send("Статус изменился успешно");
+  });
+};
+
 module.exports = {
   getStatements,
   addStatement,
+  updateStatus,
 };
