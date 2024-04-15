@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IStatement } from "../../modules/IStatement";
+import { IStatement } from "../../../modules/IStatement";
 import { getStatements } from "./statements.actions";
 
 interface StatementsState {

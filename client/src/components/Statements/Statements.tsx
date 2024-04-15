@@ -3,14 +3,14 @@ import { useAppSelector } from "../../hooks/redux";
 import { useActions } from "../../hooks/useActions";
 
 const Statements: React.FC = () => {
+  const { statements } = useAppSelector((state) => state.statements);
+
+  const { getStatements } = useActions();
+
   React.useEffect(() => {
     getStatements();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const { statements } = useAppSelector((state) => state.statements);
-
-  const { getStatements } = useActions();
 
   return (
     <section>
