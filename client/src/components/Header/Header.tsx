@@ -7,6 +7,13 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ pageUrl }) => {
+  const handleLogout = () => {
+    fetch("http://localhost:3001/api/v1/users/logout", {
+      method: "GET",
+      credentials: "include",
+    }).then(() => window.location.reload());
+  };
+
   const statementsUrl = pageUrl === "/statements";
   const statementMakingUrl = pageUrl === "/statement-making";
   const adminUrl = pageUrl === "/admin";
@@ -29,7 +36,9 @@ const Header: React.FC<HeaderProps> = ({ pageUrl }) => {
       </li>
       <li>
         <Link to={"/"}>
-          <button className={styles.exit}>Выйти</button>
+          <button className={styles.exit} onClick={handleLogout}>
+            Выйти
+          </button>
         </Link>
       </li>
     </>
@@ -39,12 +48,16 @@ const Header: React.FC<HeaderProps> = ({ pageUrl }) => {
         <Link to={"/statements"}>Вернуться обратно</Link>
       </li>
       <Link to={"/"}>
-        <button className={styles.exit}>Выйти</button>
+        <button className={styles.exit} onClick={handleLogout}>
+          Выйти
+        </button>
       </Link>
     </>
   ) : adminUrl ? (
     <Link to={"/"}>
-      <button className={styles.exit}>Выйти</button>
+      <button className={styles.exit} onClick={handleLogout}>
+        Выйти
+      </button>
     </Link>
   ) : (
     ""

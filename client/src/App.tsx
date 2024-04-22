@@ -1,7 +1,7 @@
 import React from "react";
 import RegPage from "./pages/RegPage";
+import LoginPage from "./pages/LoginPage";
 import ErrorPage from "./pages/ErrorPage";
-import AuthPage from "./pages/AuthPage";
 import StatementsPage from "./pages/StatementsPage";
 import StatementMakingPage from "./pages/StatementMakingPage";
 import AdminPage from "./pages/AdminPage";
@@ -14,8 +14,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/auth",
-    element: <AuthPage />,
+    path: "/login",
+    element: <LoginPage />,
   },
   {
     path: "/statements",
