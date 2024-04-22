@@ -4,23 +4,22 @@ import { Link, useNavigate } from "react-router-dom";
 const DEFAULT_VALUES = {
   login: "",
   password: "",
-  fullName: "",
-  tel: "",
-  email: "",
 };
 
-const RegPage: React.FC = () => {
+const LoginPage: React.FC = () => {
   const [values, setValues] = React.useState(DEFAULT_VALUES);
+
   const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    fetch("http://localhost:3001/api/v1/users/reg", {
+    fetch("http://localhost:3001/api/v1/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify(values),
     })
       .then((response) => {
@@ -31,7 +30,7 @@ const RegPage: React.FC = () => {
       })
       .then((data) => {
         if (data.status === "Success") {
-          navigate("/login");
+          navigate("/statements");
         } else {
           alert(data.status);
         }
@@ -47,7 +46,7 @@ const RegPage: React.FC = () => {
         <div className={"form__body"}>
           <form onSubmit={handleSubmit} className={"form"}>
             <h2 className={"title"} style={{ marginBottom: 15 }}>
-              Создать аккаунт
+              Войти в аккаунт
             </h2>
             <div className={"input-field"}>
               <h3 className="sub-title">Логин</h3>
@@ -67,42 +66,14 @@ const RegPage: React.FC = () => {
                 type="password"
                 style={{ marginBottom: 5 }}
               />
-              <p>Пароль должен быть не менее 6 символов</p>
-            </div>
-            <div className={"input-field"}>
-              <h3 className="sub-title">ФИО</h3>
-              <input
-                value={values.fullName}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValues({ ...values, fullName: e.target.value })}
-                required
-                type="text"
-              />
-            </div>
-            <div className={"input-field"}>
-              <h3 className="sub-title">Телефон</h3>
-              <input
-                value={values.tel}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValues({ ...values, tel: e.target.value })}
-                required
-                type="tel"
-              />
-            </div>
-            <div className={"input-field"}>
-              <h3 className="sub-title">Email</h3>
-              <input
-                value={values.email}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValues({ ...values, email: e.target.value })}
-                required
-                type="email"
-              />
             </div>
             <button type="submit" className={"submit-btn"}>
-              Создать аккаунт
+              Войти в аккаунт
             </button>
             <hr />
             <div className={"redirect"} style={{ display: "flex", justifyContent: "center" }}>
               <p className={"redirect__link"}>
-                <Link to={"/login"}>Уже есть аккаунт?</Link>
+                <Link to={"/"}>Еще нет аккаунта?</Link>
               </p>
             </div>
           </form>
@@ -112,4 +83,4 @@ const RegPage: React.FC = () => {
   );
 };
 
-export default RegPage;
+export default LoginPage;

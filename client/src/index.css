@@ -141,10 +141,14 @@ textarea:focus {
   width: 100%;
   min-height: 25px;
   background-color: #106ba3;
-  color: #fff;
   border-radius: 4px;
+  color: #fff;
 
   transition: 0.3s all;
+}
+.submit-btn a {
+  color: #fff;
+  text-decoration: none;
 }
 .submit-btn:hover {
   background-color: #1c7ebb;
